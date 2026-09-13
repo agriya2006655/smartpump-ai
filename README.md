@@ -1,3 +1,5 @@
+**Live app:** https://smartpump-ai.streamlit.app/ 
+
 # SmartPump AI
 
 AI-assisted performance monitoring & predictive maintenance dashboard for a
