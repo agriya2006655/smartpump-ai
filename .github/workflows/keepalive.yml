@@ -1,0 +1,49 @@
+name: Keep SmartPump AI awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Visit and wake the app
+        run: |
+          cat > wake.py << 'EOF'
+          from playwright.sync_api import sync_playwright
+
+          URL = "https://smartpump-ai.streamlit.app/"
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page()
+              page.goto(URL, timeout=90000)
+              page.wait_for_timeout(8000)
+
+              try:
+                  button = page.get_by_text("get this app back up", exact=False)
+                  if button.count() > 0:
+                      button.first.click()
+                      print("App was asleep -> clicked wake button")
+                      page.wait_for_timeout(45000)
+                  else:
+                      print("App was already awake")
+              except Exception as e:
+                  print("Wake check skipped:", e)
+
+              print("Page title:", page.title())
+              browser.close()
+          EOF
+          python wake.py
