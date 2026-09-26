@@ -3,6 +3,10 @@
 🔴 **[Live Demo](https://smartpump-ai.streamlit.app/)**  
 💻 **[GitHub Repository](https://github.com/agriya2006655/smartpump-ai)**
 
+## Project Preview
+
+![SmartPump AI Dashboard](smartpump_dashboard.png)
+
 AI-assisted performance monitoring & predictive maintenance dashboard for a
 boiler feedwater pump, built with simulated sensor data.
 
