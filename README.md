@@ -1,5 +1,8 @@
 # SmartPump AI
 
+🔴 **[Live Demo](https://smartpump-ai.streamlit.app/)**  
+💻 **[GitHub Repository](https://github.com/agriya2006655/smartpump-ai)**
+
 AI-assisted performance monitoring & predictive maintenance dashboard for a
 boiler feedwater pump, built with simulated sensor data.
 
@@ -50,18 +53,6 @@ resemble realistic operating patterns — not from a real industrial pump.
 - **What-If Simulator** — drag sliders to set your own sensor values, hit
   "RUN AI DIAGNOSTIC," and see the prediction update live. This is the
   most impressive part to demo to a recruiter or in an interview.
-
-## Next steps to make it stronger for your resume
-
-1. Push this whole folder to a GitHub repo with this README.
-2. Take a screen recording (GIF) of the What-If tab in action — put it at
-   the top of the README. Recruiters open READMEs, not code, first.
-3. (Optional, later) Build a simple 3D pump model in SolidWorks, export a
-   screenshot/render, and add it to the top of the dashboard as an image
-   — this is what makes it look like an engineering project and not just
-   an ML script.
-4. (Optional, later) Deploy it for free on Streamlit Community Cloud so
-   the link works without anyone installing anything.
 
 ## Talking points for interviews
 
